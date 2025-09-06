@@ -10,9 +10,9 @@ public class Array implements Cloneable{
         anArray[i] += 1;  
     }
 
-  private boolean validateIndex(int index){
-    return index >= 0 || index < anArray.length;
-  }
+  // private boolean validateIndex(int index){
+  //   return index >= 0 || index < anArray.length;
+  // }
 
   @Override
   public String toString(){
@@ -25,10 +25,9 @@ public class Array implements Cloneable{
   @Override
   public Object clone() throws CloneNotSupportedException{
     // Deep Copy
-        Array newArray = new Array();
-         for(int i = 0; i < this.anArray.length; i++)
-            newArray.anArray[i] = this.anArray[i];
-        return newArray;
+       Array newArray = new Array();
+       newArray.anArray = this.anArray.clone(); // deep copy for primitives
+       return newArray;
   }
 
 
