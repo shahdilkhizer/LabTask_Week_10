@@ -25,7 +25,7 @@ public class Array implements Cloneable{
   @Override
   public Object clone() throws CloneNotSupportedException{
     // Deep Copy
-       Array newArray = new Array();
+       Array newArray = (Array) super.clone();
        newArray.anArray = this.anArray.clone(); // deep copy for primitives
        return newArray;
   }
